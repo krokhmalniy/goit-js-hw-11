@@ -11,11 +11,23 @@
     <main>
       <header class="header">
         <div class="container">
-         
+          <form class="form">
+            <label>
+              <input
+                class="form-text"
+                type="text"
+                name="search-text"
+                placeholder="Search images..."
+                required
+              />
+            </label>
+            <button type="submit">Search</button>
+            <div class="load" hidden></div>
+          </form>
+          <ul class='gallery'></ul>
         </div>
       </header>
     </main>
-
     <script type="module" src="./main.js"></script>
     <script type="module" src="./js/pixabay-api.js"></script>
     <script type="module" src="./js/render-functions.js"></script>
