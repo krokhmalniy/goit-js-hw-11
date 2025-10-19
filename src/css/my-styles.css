@@ -102,8 +102,13 @@
   color: #ffffff;
 }
 
+.submit-button:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
 .submit-button:hover {
-background-color: #6C8CFF;
+  background-color: #6c8cff;
 }
 
 .gallery-figure {
@@ -111,33 +116,38 @@ background-color: #6C8CFF;
 }
 
 .gallery {
-  display: flex;             /* вмикаємо флекс */
-  flex-wrap: wrap;           /* дозволяємо переносити рядки */
-  justify-content: space-between; /* рівномірні відстані між картками */
-  width: 1128px;             /* фіксована ширина контейнера */
-  margin: 0 auto;            /* центр по горизонталі */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 1128px;
+  margin: 0 auto;
   padding: 0;
   list-style: none;
-  gap: 24px;                 /* відстань між елементами (нові браузери підтримують) */
+  gap: 24px;
 }
 
 .gallery-item {
-  flex: 0 0 calc((1128px - 2 * 24px) / 3); /* ширина кожного елемента: (контейнер - сумарний gap) / 3 */
+  flex: 0 0 calc((1128px - 2 * 24px) / 3);
   overflow: hidden;
   border: 1px solid #808080;
-  box-sizing: border-box;  
+  box-sizing: border-box;
 }
 
 .gallery-item img {
   width: 100%;
-  height: 260px;         /* фіксована висота */
-  object-fit: cover;     /* обрізка, щоб не спотворювалося */
+  height: 260px;
+  object-fit: cover;
   display: block;
 }
 
-.gallery-stats{
+.gallery-stats {
   display: flex;
-
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  padding: 4px 25px 4px 20px;
 }
 
 .social-info {
@@ -146,5 +156,31 @@ background-color: #6C8CFF;
   font-size: 12px;
   line-height: 1.3;
   letter-spacing: 0.04em;
-  color: #2E2F42;
+  color: #2e2f42;
+}
+
+.stats-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stats-item:first-child {
+  margin-right: 28px;
+}
+
+.stats-item:nth-child(2) {
+  margin-right: 27px;
+}
+
+.stats-item:nth-child(3) {
+  margin-right: 32px;
+}
+
+.iziToast-wrapper .iziToast>.iziToast-close {
+  background: url('../img/bi_x-lg.svg')  no-repeat center center;
+   width: 16px;
+  height: 16px;
+  right: 18px;
+  top: 19px;
 }

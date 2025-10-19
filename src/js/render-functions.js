@@ -24,10 +24,10 @@ export function createGallery(images) {
   </a>
    <figcaption class="gallery-info">
       <ul class="gallery-stats">
-        <li><span class='social-info'>Likes</span> ${image.likes}</li>
-        <li><span class='social-info'>Views</span> ${image.views}</li>
-        <li><span class='social-info'>Comments</span> ${image.comments}</li>
-        <li><span class='social-info'>Downloads</span> ${image.downloads}</li>
+        <li class='stats-item'><span class='social-info'>Likes</span> <span>${image.likes}</span> </li>
+        <li class='stats-item'><span class='social-info'>Views</span> <span>${image.views}</span></li>
+        <li class='stats-item'><span class='social-info'>Comments</span> <span>${image.comments}</span></li>
+        <li class='stats-item'><span class='social-info'>Downloads</span> <span>${image.downloads}</span></li>
       </ul>
     </figcaption>
    </figure>
