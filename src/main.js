@@ -7,6 +7,7 @@ import {
 import { getImagesByQuery } from './js/pixabay-api';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+import iconOctagon from './img/bi_x-octagon.svg';
 const container = document.querySelector('.container');
 const formSearch = document.querySelector('.form');
 const formText = document.querySelector('.form-text');
@@ -29,7 +30,7 @@ formSearch.addEventListener('submit', event => {
           message:
             'Sorry, there are no images matching your search query. Please try again!',
           messageColor: '#FAFAFB',
-          iconUrl: './img/bi_x-octagon.svg',
+          iconUrl: iconOctagongit,
           closeOnEscape: true,
         });
       }
