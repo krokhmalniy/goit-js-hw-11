@@ -1,5 +1,5 @@
 /* Loader */
-.loader{
+.loader {
   width: 200px;
   height: 40px;
   background-color: #0004;
@@ -9,7 +9,7 @@
 }
 .loader:after {
   border-radius: 50px;
-  content: "";
+  content: '';
   position: absolute;
   background-color: #fff;
   left: 2px;
@@ -40,8 +40,111 @@
     left: 2px;
   }
 }
-  
-   
-      
-  
-  
+
+.header .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.form-text {
+  box-sizing: border-box;
+  width: 371px;
+  height: 40px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  padding: 8px 16px;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.form-text:hover {
+  border-color: #000000;
+}
+
+.form-text:active {
+  border-color: #4e75ff;
+}
+
+.form-text::placeholder {
+  color: #808080;
+}
+
+.form-text:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.submit-button {
+  width: 75px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4e75ff;
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+
+.submit-button:hover {
+background-color: #6C8CFF;
+}
+
+.gallery-figure {
+  margin: 0;
+}
+
+.gallery {
+  display: flex;             /* вмикаємо флекс */
+  flex-wrap: wrap;           /* дозволяємо переносити рядки */
+  justify-content: space-between; /* рівномірні відстані між картками */
+  width: 1128px;             /* фіксована ширина контейнера */
+  margin: 0 auto;            /* центр по горизонталі */
+  padding: 0;
+  list-style: none;
+  gap: 24px;                 /* відстань між елементами (нові браузери підтримують) */
+}
+
+.gallery-item {
+  flex: 0 0 calc((1128px - 2 * 24px) / 3); /* ширина кожного елемента: (контейнер - сумарний gap) / 3 */
+  overflow: hidden;
+  border: 1px solid #808080;
+  box-sizing: border-box;  
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 260px;         /* фіксована висота */
+  object-fit: cover;     /* обрізка, щоб не спотворювалося */
+  display: block;
+}
+
+.gallery-stats{
+  display: flex;
+
+}
+
+.social-info {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+  color: #2E2F42;
+}
