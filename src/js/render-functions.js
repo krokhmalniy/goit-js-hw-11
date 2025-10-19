@@ -48,13 +48,13 @@ export function clearGallery() {
 
 
 export function showLoader() {
-  const load = document.querySelector('.load');
+  const load = document.querySelector('.loader');
   load.hidden = false;
-  load.classList.add('loader');
+  load.classList.add('load');
 }
 
 export function hideLoader() {
-  const load = document.querySelector('.load');
+  const load = document.querySelector('.loader');
   load.hidden = true;
-  load.classList.remove('loader');
+  load.classList.remove('load');
 }
