@@ -8,21 +8,30 @@ import { getImagesByQuery } from './js/pixabay-api';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import iconOctagon from '../src/img/bi_x-octagon.svg';
+
 const container = document.querySelector('.container');
 const formSearch = document.querySelector('.form');
 const formText = document.querySelector('.form-text');
+const submitButton = document.querySelector('.submit-button');
 let formTextValue = '';
 
 formSearch.addEventListener('submit', event => {
   event.preventDefault();
+  const query = formText.value.trim().toLowerCase();
+  if (!query) {
+    return iziToast.info({
+      message: 'Please enter the query parameters',
+      messageColor: '#FAFAFB',
+      closeOnEscape: true,
+    });
+  }
+
   showLoader();
-  formTextValue = formText.value.trim().toLowerCase();
+  submitButton.disabled = true;
+
   clearGallery();
 
-  if (!formTextValue) {
-    return;
-  }
-  getImagesByQuery(formTextValue)
+  getImagesByQuery(query)
     .then(response => {
       if (response.data.hits.length === 0) {
         return iziToast.warning({
@@ -34,14 +43,18 @@ formSearch.addEventListener('submit', event => {
           closeOnEscape: true,
         });
       }
-      const images = response.data.hits;
-
-      createGallery(images);
+      createGallery(response.data.hits);
     })
     .catch(error => {
-      console.error('Виникла помилка:', error);
+      iziToast.error({
+        message: `${error}`,
+        closeOnEscape: true,
+      });
     })
-    .finally(hideLoader);
+    .finally(() => {
+      hideLoader();
+      submitButton.disabled = false;
+    });
 
   formText.value = '';
 });

@@ -20,6 +20,6 @@ export function getImagesByQuery(query) {
       return response;
     })
     .catch(error => {
-     return error;
-    })
+      throw error;
+    });
 }
